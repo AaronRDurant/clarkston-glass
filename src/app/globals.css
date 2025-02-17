@@ -1,21 +1,130 @@
+/* Tailwind imports */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ================================
+   Custom Keyframes & Animations
+   ================================ */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Fade-in animation for smoother transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  color: var(--foreground);
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* ================================
+   Fonts
+   ================================ */
+
+/* Custom Font - Source Sans 3 */
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/fonts/SourceSans3-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/fonts/SourceSans3-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+/* ================================
+   Global Colors
+   ================================ */
+
+/* Default color scheme for light and dark mode */
+:root {
+  --background: #ffffff; /* Light mode background */
+  --text: #2c2c2c; /* Light mode text */
+}
+
+[data-theme="dark"] {
+  --background: #1f1f1f; /* Dark mode background */
+  --text: #cccccc; /* Dark mode text */
+}
+
+/* ================================
+   Global Styles
+   ================================ */
+
+/* Apply global styles to the html and body */
+html {
+  color: var(--text);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background color change */
+}
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
+
+/* ================================
+   Backdrop and Box Shadow Effects
+   ================================ */
+
+/* Improved backdrop blur effect */
+.backdrop-blur-lg {
+  backdrop-filter: blur(12px);
+}
+
+/* Shadow effects on hover */
+.hover\:shadow-md:hover {
+  box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.2);
+}
+
+.dark .dark\:hover\:shadow-gray-600:hover {
+  box-shadow: 0px 0px 12px rgba(100, 100, 100, 0.3);
+}
+
+/* ================================
+   Navbar Transition
+   ================================ */
+
+/* Smooth transition for navbar when scrolling */
+nav {
+  transition: background 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ================================
+   Scrollbar Styling
+   ================================ */
+
+/* Custom scrollbar for Webkit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Adjust scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light gray background */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e3a8a; /* Blue from navbar */
+  border-radius: 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #162b67; /* Darker blue on hover */
+}
+
+/* Firefox scrollbar customization */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1e3a8a #f1f1f1;
 }
