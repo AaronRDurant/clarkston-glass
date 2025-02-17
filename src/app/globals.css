@@ -48,11 +48,15 @@
 :root {
   --background: #ffffff; /* Light mode background */
   --text: #2c2c2c; /* Light mode text */
+  --testimonial-bg: #f5f5f5; /* Light mode background for testimonials */
+  --testimonial-text: #333333; /* Light mode text color for testimonials */
 }
 
 [data-theme="dark"] {
   --background: #1f1f1f; /* Dark mode background */
   --text: #cccccc; /* Dark mode text */
+  --testimonial-bg: #2a2a2a; /* Dark mode background for testimonials */
+  --testimonial-text: #e0e0e0; /* Dark mode text color for testimonials */
 }
 
 /* ================================
@@ -104,6 +108,10 @@ nav {
    ================================ */
 
 /* Custom scrollbar for Webkit browsers (Chrome, Edge, Safari) */
+html {
+  scrollbar-color: #1e3a8a #f1f1f1; /* Set thumb and track color for WebKit browsers */
+}
+
 ::-webkit-scrollbar {
   width: 10px; /* Adjust scrollbar width */
 }
@@ -127,4 +135,8 @@ nav {
 * {
   scrollbar-width: thin;
   scrollbar-color: #1e3a8a #f1f1f1;
+}
+
+body {
+  scrollbar-color: #1e3a8a #f1f1f1; /* Ensure Safari and Webkit browsers apply these styles to body */
 }
