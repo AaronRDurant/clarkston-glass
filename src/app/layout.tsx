@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Clarkston Glass | Custom Glass Solutions",
+  title: "Clarkston Glass — Custom Glass Solutions",
   description: "High-quality glass services in Clarkston, MI.",
 };
 
