@@ -12,9 +12,9 @@ This project is a custom-coded solution using **Next.js** and **Tailwind CSS**, 
 
 - **[Next.js](https://nextjs.org/)** — React framework for fast, SSR/SSG-rendered pages
 - **[Tailwind CSS](https://tailwindcss.com/)** — Utility-first styling for a sleek, responsive UI
-- **[Vercel](https://vercel.com/)** — Front-end hosting with CI/CD integration
-- **[Heroicons](https://heroicons.com/)** — Elegant, SVG-based icons for UI elements
 - **[TypeScript](https://www.typescriptlang.org/)** — Type-safe development for maintainability
+- **[Heroicons](https://heroicons.com/)** — Elegant, SVG-based icons for UI elements
+- **[Vercel](https://vercel.com/)** — Front-end hosting with CI/CD integration
 
 ## 📖 Features
 
