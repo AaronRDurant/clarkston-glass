@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
 
-const HeroSection = () => {
+const Hero = () => {
   const [status, setStatus] = useState<string>("");
 
   // Get the current time and check if the business is open
@@ -73,9 +73,9 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="pt-40 px-6 md:px-12 lg:px-24 mb-16">
+    <div className="pt-40 px-6 md:px-12 lg:px-24 max-w-[1440px] mx-auto">
       {/* Hero Section - Flex Layout (Left and Right Split) */}
-      <div className="flex flex-col md:flex-row justify-between items-center">
+      <div className="flex flex-col md:flex-row justify-between items-center pb-8">
         {/* Left side: Subtitle and Paragraph */}
         <div className="mb-12 md:mb-0 md:w-3/4">
           <h2 className="text-left text-[70px] md:text-[60px] sm:text-[50px] font-extrabold leading-tight mb-6 text-[var(--text)] transition-all duration-300">
@@ -110,8 +110,11 @@ const HeroSection = () => {
           />
         </div>
       </div>
+
+      {/* Divider to break Hero Section from the next section */}
+      <div className="w-full h-1 bg-gradient-to-r from-transparent via-gray-500 to-transparent my-12"></div>
     </div>
   );
 };
 
-export default HeroSection;
+export default Hero;
