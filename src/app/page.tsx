@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <div className="flex flex-col md:flex-row gap-12 px-6 md:px-12 lg:px-24 my-16">
+      <div className="flex flex-col md:flex-row gap-12 px-24 md:px-24 lg:px-48 my-16">
         {/* Left side: Services */}
         <div className="flex-1">
           <Services />
