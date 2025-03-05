@@ -43,15 +43,9 @@ export default function Navbar() {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-1">
               <MapPinIcon className="h-4 w-4" />
-              <a
-                href="https://www.google.com/maps/place/Clarkston+Glass/@42.7155421,-83.415841,16z/data=!3m1!4b1!4m6!3m5!1s0x8824977850cbbbd2b!8m2!3d42.7155382!4d-83.4132661!16s%2Fg%2F1td7jb_5?entry=ttu"
-                className="hover:text-gray-300 transition-colors duration-200"
-                aria-label="Get directions to Clarkston Glass"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <span className="text-sm">
                 6577 Dixie Hwy, Clarkston, MI 48346
-              </a>
+              </span>
             </div>
           </div>
 
@@ -65,9 +59,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-1">
               <PhoneIcon className="h-4 w-4" />
-              <span className="hover:text-gray-300 transition-colors duration-200">
-                (248) 625-5911
-              </span>
+              <span className="text-sm">248-625-5911</span>
             </div>
             <Link
               href="/contact"
