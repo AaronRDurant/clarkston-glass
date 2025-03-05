@@ -30,7 +30,7 @@ const testimonialsData = [
   },
 ];
 
-const ReviewsCarousel = () => {
+const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextTestimonial = () => {
@@ -93,4 +93,4 @@ const ReviewsCarousel = () => {
   );
 };
 
-export default ReviewsCarousel;
+export default Testimonials;
