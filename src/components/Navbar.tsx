@@ -119,27 +119,37 @@ export default function Navbar() {
           </ul>
 
           {/* Dark Mode Toggle */}
-          <button
+          <div
             onClick={toggleTheme}
-            className="ml-4 flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:ring-2 hover:ring-gray-400 dark:hover:ring-gray-500 transition-all duration-300"
+            className="relative ml-4 w-16 h-8 bg-gray-200/60 dark:bg-gray-700/60 rounded-full cursor-pointer transition-all duration-300 shadow-inner"
           >
             <div
-              className="relative w-6 h-6 flex items-center justify-center transition-transform duration-300"
-              style={{
-                transform: theme === "dark" ? "rotate(360deg)" : "rotate(0deg)",
-              }}
+              className={`absolute top-0.5 left-0.5 w-7 h-7 bg-white dark:bg-gray-800 rounded-full shadow-md transition-all duration-300 ease-in-out transform ${
+                theme === "light" ? "translate-x-8" : ""
+              }`}
             >
               {mounted ? (
-                theme === "dark" ? (
-                  <SunIcon className="absolute h-6 w-6 text-yellow-400 opacity-100 transition-opacity duration-300" />
-                ) : (
-                  <MoonIcon className="absolute h-6 w-6 text-gray-900 dark:text-gray-300 opacity-100 transition-opacity duration-300" />
-                )
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <SunIcon
+                    className={`absolute w-5 h-5 text-yellow-500 transition-all duration-300 ${
+                      theme === "light"
+                        ? "rotate-0 opacity-100 scale-100"
+                        : "-rotate-90 opacity-0 scale-50"
+                    }`}
+                  />
+                  <MoonIcon
+                    className={`absolute w-5 h-5 text-gray-900 dark:text-gray-300 transition-all duration-300 ${
+                      theme === "dark"
+                        ? "rotate-0 opacity-100 scale-100"
+                        : "rotate-90 opacity-0 scale-50"
+                    }`}
+                  />
+                </div>
               ) : (
-                <span className="block w-6 h-6 bg-gray-300 dark:bg-gray-700 rounded-full"></span>
+                <span className="block w-full h-full bg-gray-300 dark:bg-gray-700 rounded-full"></span>
               )}
             </div>
-          </button>
+          </div>
         </div>
       </nav>
     </div>
