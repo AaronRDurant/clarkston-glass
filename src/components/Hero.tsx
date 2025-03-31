@@ -102,8 +102,8 @@ const Hero = () => {
         {/* Right side: Image */}
         <div className="md:w-1/2 w-full mb-12 md:mb-0 flex justify-center">
           <Image
-            src="/images/Malcolm-Stewart-2025-Detroit-SX.jpg"
-            alt="Clarkston Glass project"
+            src="/images/Clarkston-Glass-framed-shower.jpg"
+            alt="Clarkston Glass framed shower project"
             width={500}
             height={500}
             className="rounded-lg shadow-lg object-cover"
