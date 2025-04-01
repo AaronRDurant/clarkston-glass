@@ -30,67 +30,61 @@ const testimonialsData = [
   },
 ];
 
-const Testimonials = () => {
+export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextTestimonial = () => {
+  const nextTestimonial = () =>
     setCurrentIndex((prev) => (prev + 1) % testimonialsData.length);
-  };
-
-  const prevTestimonial = () => {
+  const prevTestimonial = () =>
     setCurrentIndex(
       (prev) => (prev - 1 + testimonialsData.length) % testimonialsData.length
     );
-  };
 
   return (
-    <div className="w-full mb-12 pt-6">
-      <div className="flex justify-center">
-        <div className="bg-white dark:bg-gray-800 p-6 pb-10 rounded-lg shadow-xl max-w-3xl w-full h-[320px] flex flex-col justify-between relative transition-shadow duration-300">
-          {/* Testimonial Content */}
-          <div className="flex-grow flex items-center justify-center">
-            <p className="text-lg text-gray-900 dark:text-gray-100 mb-4">
-              &quot;{testimonialsData[currentIndex].text}&quot;
+    <section className="py-12 px-6 md:px-12 lg:px-24">
+      <div className="max-w-[1440px] mx-auto">
+        <h2 className="text-4xl font-bold mb-8 text-center text-white">
+          What Our Clients Are Saying
+        </h2>
+        <div className="relative">
+          {/* Testimonial Card */}
+          <div className="border border-gray-800 bg-[#222] p-6 md:p-8 rounded-lg shadow transition duration-300 mx-auto max-w-3xl">
+            <p className="text-base md:text-lg text-white mb-6">
+              “{testimonialsData[currentIndex].text}”
+            </p>
+            <p className="text-right text-sm md:text-base font-medium text-white">
+              {testimonialsData[currentIndex].author}
             </p>
           </div>
-          <div className="text-right text-gray-600 dark:text-gray-400 font-semibold mb-4">
-            {testimonialsData[currentIndex].author}
-          </div>
-
-          {/* Navigation Arrows and Dots */}
-          <div className="absolute bottom-4 left-0 right-0 px-4 flex justify-between items-center">
+          {/* Navigation Controls */}
+          <div className="absolute inset-0 flex items-center justify-between px-4">
             <button
               onClick={prevTestimonial}
-              className="text-gray-500 dark:text-gray-300 p-2"
+              className="border border-gray-800 bg-[#222] rounded-full p-2 shadow transition-colors"
             >
-              <ChevronLeftIcon className="h-6 w-6" />
+              <ChevronLeftIcon className="h-6 w-6 text-white" />
             </button>
-
-            <div className="flex justify-center space-x-2">
-              {testimonialsData.map((_, index) => (
-                <div
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`h-2 w-2 rounded-full cursor-pointer ${
-                    index === currentIndex
-                      ? "bg-blue-500"
-                      : "bg-gray-300 dark:bg-gray-600"
-                  } transition-colors`}
-                />
-              ))}
-            </div>
-
             <button
               onClick={nextTestimonial}
-              className="text-gray-500 dark:text-gray-300 p-2"
+              className="border border-gray-800 bg-[#222] rounded-full p-2 shadow transition-colors"
             >
-              <ChevronRightIcon className="h-6 w-6" />
+              <ChevronRightIcon className="h-6 w-6 text-white" />
             </button>
+          </div>
+          {/* Pagination Dots */}
+          <div className="flex justify-center mt-6">
+            {testimonialsData.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`h-3 w-3 rounded-full mx-1 transition-colors ${
+                  index === currentIndex ? "bg-blue-500" : "bg-gray-500"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Testimonials;
+}

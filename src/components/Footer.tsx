@@ -28,10 +28,10 @@ const Footer = () => {
                   href="tel:+12486255911"
                   className="text-lg font-medium text-[var(--text)] transition-all duration-300 md:hidden"
                 >
-                  (248) 625-5911
+                  248-625-5911
                 </a>
                 <span className="text-lg font-medium text-[var(--text)] hidden md:inline-block transition-all duration-300">
-                  (248) 625-5911
+                  248-625-5911
                 </span>
               </div>
               <div className="flex items-center space-x-4 justify-center md:justify-start">
