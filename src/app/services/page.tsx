@@ -1,133 +1,86 @@
 "use client";
 
-import { useState } from "react";
+import Image from "next/image";
 
-export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+const services = [
+  {
+    title: "Window Repairs",
+    description:
+      "Expert window repairs: replace just the glass with energy-efficient options and custom fits. We offer comprehensive solutions that save you money while enhancing energy efficiency.",
+    icon: "/images/Clarkston-Glass-framed-shower.jpg",
+    link: "/services/window-repairs",
+  },
+  {
+    title: "Shower Doors",
+    description:
+      "Custom European shower doors built from 3/8” thick glass with diverse finish options. Our installations provide both safety and modern elegance for your bathroom.",
+    icon: "/images/Clarkston-Glass-framed-shower.jpg",
+    link: "/services/shower-doors",
+  },
+  {
+    title: "Custom Mirrors",
+    description:
+      "Expertly crafted custom mirrors that elevate your space. Designed with precision, our mirrors combine aesthetic appeal with practical functionality.",
+    icon: "/images/Clarkston-Glass-framed-shower.jpg",
+    link: "/services/custom-mirrors",
+  },
+  {
+    title: "Auto Glass",
+    description:
+      "NGA-certified auto glass repair and replacement. We deliver fast, reliable services to get your vehicle back on the road safely and efficiently.",
+    icon: "/images/Clarkston-Glass-framed-shower.jpg",
+    link: "/services/auto-glass",
+  },
+  {
+    title: "Glass Doors & Walls",
+    description:
+      "Elegant glass doors and walls built with premium glass and customizable hardware. Enhance any space with our modern, stylish installations.",
+    icon: "/images/Clarkston-Glass-framed-shower.jpg",
+    link: "/services/glass-doors-walls",
+  },
+  {
+    title: "Storefront Solutions",
+    description:
+      "Expert commercial glass for storefronts, entry doors, and more. With decades of experience, we combine durability and style to meet your business needs.",
+    icon: "/images/Clarkston-Glass-framed-shower.jpg",
+    link: "/services/storefronts",
+  },
+];
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-  };
-
+export default function ServicesPage() {
   return (
-    <section className="py-12 px-6 md:px-12 lg:px-24 bg-gray-100">
+    <div className="mt-40 mb-12 px-6 md:px-12 lg:px-24">
       <div className="max-w-[1440px] mx-auto">
-        <h1 className="text-4xl font-bold mb-8 text-[var(--text)]">
-          Contact Us
+        <h1 className="text-4xl font-bold text-center mb-12 text-[var(--text)]">
+          Our Services
         </h1>
-        <div className="flex flex-col md:flex-row">
-          {/* Form Section */}
-          <div className="md:w-1/2 mb-8 md:mb-0">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block mb-2 font-medium text-[var(--text)]"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full border border-gray-300 p-2 rounded"
-                  required
-                />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="border p-6 rounded-lg shadow hover:shadow-lg transition duration-300"
+            >
+              <div className="flex items-center mb-4">
+                <div className="flex-shrink-0">
+                  <Image
+                    src={service.icon}
+                    alt={service.title}
+                    width={80}
+                    height={80}
+                    className="rounded-lg"
+                  />
+                </div>
+                <h2 className="text-2xl font-semibold text-[var(--text)] ml-4">
+                  {service.title}
+                </h2>
               </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block mb-2 font-medium text-[var(--text)]"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full border border-gray-300 p-2 rounded"
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block mb-2 font-medium text-[var(--text)]"
-                >
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full border border-gray-300 p-2 rounded"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block mb-2 font-medium text-[var(--text)]"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full border border-gray-300 p-2 rounded"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-
-          {/* Store Information */}
-          <div className="md:w-1/2 md:pl-12">
-            <h2 className="text-2xl font-bold mb-4 text-[var(--text)]">
-              Our Store
-            </h2>
-            <p className="mb-4 text-[var(--text)]">
-              123 Glass Lane, Clarkston, MI
-            </p>
-            <p className="mb-4 text-[var(--text)]">Phone: (123) 456-7890</p>
-            {/* Google Maps Integration */}
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.020272958642!2d-122.40641758468013!3d37.78583497975769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808f74b4230b%3A0x8a21a84c2f0bd123!2sClarkston%20Glass!5e0!3m2!1sen!2sus!4v1615326809472!5m2!1sen!2sus"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
-          </div>
+              <p className="text-base text-[var(--text)]">
+                {service.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
