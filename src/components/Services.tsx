@@ -49,7 +49,7 @@ export default function Services() {
       <h1 className="text-4xl font-bold mb-8 text-[var(--text)]">
         Our Services
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-2">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
         {services.map((service, index) => (
           <div
             key={index}

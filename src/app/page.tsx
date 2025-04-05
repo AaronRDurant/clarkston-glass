@@ -1,15 +1,15 @@
 import Hero from "../components/Hero";
-import ValueProposition from "../components/ValueProposition";
+import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
-import ContactForm from "../components/ContactForm";
+import Contact from "../components/Contact";
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      <ValueProposition />
+      <Services />
       <Testimonials />
-      <ContactForm />
+      <Contact />
     </div>
   );
 }

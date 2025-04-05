@@ -36,7 +36,7 @@ const Contact = () => {
           <div className="flex flex-col space-y-8">
             <div className="border p-6 rounded-lg shadow hover:shadow-lg transition duration-300 flex flex-col space-y-4">
               <h3 className="text-2xl font-semibold text-[var(--text)]">
-                Our Office
+                Clarkston Glass
               </h3>
               <div className="flex items-center space-x-4 justify-center md:justify-start">
                 <PhoneIcon className="h-5 w-5 text-blue-500 opacity-80" />
