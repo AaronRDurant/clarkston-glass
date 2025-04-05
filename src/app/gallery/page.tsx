@@ -1,28 +1,73 @@
+"use client";
+
 import Image from "next/image";
 
-const galleryImages = [
-  { src: "/images/gallery1.jpg", alt: "Glass installation project" },
-  { src: "/images/gallery2.jpg", alt: "Custom mirror design" },
-  { src: "/images/gallery3.jpg", alt: "Modern storefront glass" },
-  { src: "/images/gallery4.jpg", alt: "Elegant shower enclosures" },
-];
-
-export default function Gallery() {
+export default function GalleryPage() {
   return (
-    <div className="py-12 px-6 md:px-12 lg:px-24 max-w-[1440px] mx-auto">
-      <h1 className="text-4xl font-bold mb-8 text-[var(--text)]">Gallery</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {galleryImages.map((img, index) => (
-          <div key={index} className="overflow-hidden rounded-lg shadow-lg">
+    <div className="mt-40 mb-12 px-6 md:px-12 lg:px-24">
+      <div className="max-w-[1440px] mx-auto">
+        <h1 className="text-4xl font-bold text-center mb-8 text-[var(--text)]">
+          Gallery
+        </h1>
+        <p className="text-center text-lg mb-12 text-[var(--text)]">
+          Explore our collection of completed projects.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="rounded-lg shadow hover:shadow-lg transition duration-300">
             <Image
-              src={img.src}
-              alt={img.alt}
-              width={500}
-              height={500}
-              className="object-cover w-full h-full"
+              src="/images/Clarkston-Glass-framed-shower.jpg"
+              alt="Gallery image 1"
+              width={750}
+              height={750}
+              className="object-cover rounded-lg"
             />
           </div>
-        ))}
+          <div className="rounded-lg shadow hover:shadow-lg transition duration-300">
+            <Image
+              src="/images/Clarkston-Glass-framed-shower.jpg"
+              alt="Gallery image 2"
+              width={750}
+              height={750}
+              className="object-cover rounded-lg"
+            />
+          </div>
+          <div className="rounded-lg shadow hover:shadow-lg transition duration-300">
+            <Image
+              src="/images/Clarkston-Glass-framed-shower.jpg"
+              alt="Gallery image 3"
+              width={750}
+              height={750}
+              className="object-cover rounded-lg"
+            />
+          </div>
+          <div className="rounded-lg shadow hover:shadow-lg transition duration-300">
+            <Image
+              src="/images/Clarkston-Glass-framed-shower.jpg"
+              alt="Gallery image 4"
+              width={750}
+              height={750}
+              className="object-cover rounded-lg"
+            />
+          </div>
+          <div className="rounded-lg shadow hover:shadow-lg transition duration-300">
+            <Image
+              src="/images/Clarkston-Glass-framed-shower.jpg"
+              alt="Gallery image 5"
+              width={750}
+              height={750}
+              className="object-cover rounded-lg"
+            />
+          </div>
+          <div className="rounded-lg shadow hover:shadow-lg transition duration-300">
+            <Image
+              src="/images/Clarkston-Glass-framed-shower.jpg"
+              alt="Gallery image 6"
+              width={750}
+              height={750}
+              className="object-cover rounded-lg"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
