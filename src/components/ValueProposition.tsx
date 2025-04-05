@@ -4,21 +4,42 @@ const services = [
   {
     title: "Window Repairs",
     description:
-      "Expert repairs for broken or damaged windows, ensuring safety and clarity.",
-    icon: "/images/Clarkston-Glass-framed-shower.jpg", // Update path as needed
+      "Expert window repairs: replace just the glass with energy-efficient options and custom fits.",
+    icon: "/images/Clarkston-Glass-framed-shower.jpg",
     link: "/services/window-repairs",
   },
   {
+    title: "Shower Doors",
+    description:
+      "Custom European shower doors built from 3/8” thick glass with diverse finish options.",
+    icon: "/images/Clarkston-Glass-framed-shower.jpg",
+    link: "/services/shower-doors",
+  },
+  {
     title: "Custom Mirrors",
-    description: "Tailored mirror designs to fit your unique space.",
+    description: "Expertly crafted custom mirrors that elevate your space.",
     icon: "/images/Clarkston-Glass-framed-shower.jpg",
     link: "/services/custom-mirrors",
   },
   {
-    title: "Storefront Solutions",
-    description: "High-quality glass installations for commercial storefronts.",
+    title: "Auto Glass",
+    description: "NGA-certified auto glass repair and replacement.",
     icon: "/images/Clarkston-Glass-framed-shower.jpg",
-    link: "/services/storefront-solutions",
+    link: "/services/auto-glass",
+  },
+  {
+    title: "Glass Doors & Walls",
+    description:
+      "Elegant glass doors and walls built with premium glass and customizable hardware.",
+    icon: "/images/Clarkston-Glass-framed-shower.jpg",
+    link: "/services/glass-doors-walls",
+  },
+  {
+    title: "Storefront Solutions",
+    description:
+      "Expert commercial glass for storefronts, entry doors, and more.",
+    icon: "/images/Clarkston-Glass-framed-shower.jpg",
+    link: "/services/storefronts",
   },
 ];
 
@@ -28,7 +49,7 @@ export default function Services() {
       <h1 className="text-4xl font-bold mb-8 text-[var(--text)]">
         Our Services
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-2">
         {services.map((service, index) => (
           <div
             key={index}
@@ -49,12 +70,6 @@ export default function Services() {
             <p className="text-base text-[var(--text)]">
               {service.description}
             </p>
-            <a
-              href={service.link}
-              className="mt-4 inline-block text-blue-500 hover:underline"
-            >
-              Learn More &rarr;
-            </a>
           </div>
         ))}
       </div>

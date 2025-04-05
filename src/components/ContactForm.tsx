@@ -28,36 +28,36 @@ const Contact = () => {
   return (
     <section className="py-12 px-6 md:px-12 lg:px-24">
       <div className="max-w-[1440px] mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-black dark:text-gray-300 mb-10">
-          Let&apos;s Do This
+        <h2 className="text-4xl font-bold mb-8 text-center text-[var(--text)]">
+          Get in Touch
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Office Info & Map (left column) */}
           <div className="flex flex-col space-y-8">
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-xl flex flex-col space-y-4">
-              <h3 className="text-2xl font-bold text-gray-600 dark:text-gray-300">
+            <div className="border p-6 rounded-lg shadow hover:shadow-lg transition duration-300 flex flex-col space-y-4">
+              <h3 className="text-2xl font-semibold text-[var(--text)]">
                 Our Office
               </h3>
               <div className="flex items-center space-x-4 justify-center md:justify-start">
                 <PhoneIcon className="h-5 w-5 text-blue-500 opacity-80" />
-                <span className="text-lg font-medium text-gray-600 dark:text-gray-300 transition-all duration-300">
+                <span className="text-lg font-medium text-[var(--text)] transition-all duration-300">
                   248-625-5911
                 </span>
               </div>
               <div className="flex items-center space-x-4 justify-center md:justify-start">
                 <MapPinIcon className="h-5 w-5 text-green-500 opacity-80" />
-                <address className="not-italic text-lg text-gray-600 dark:text-gray-300 transition-all duration-300">
+                <address className="not-italic text-lg text-[var(--text)] transition-all duration-300">
                   6577 Dixie Hwy, Clarkston, MI 48346
                 </address>
               </div>
               <div className="flex items-center space-x-4 justify-center md:justify-start">
                 <ClockIcon className="h-5 w-5 text-purple-500 opacity-80" />
-                <span className="text-lg text-gray-600 dark:text-gray-300 transition-all duration-300">
+                <span className="text-lg text-[var(--text)] transition-all duration-300">
                   Mon–Fri: 8 am – 5 pm, Sat: 8 am – 12 pm
                 </span>
               </div>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-xl">
+            <div className="border rounded-lg shadow hover:shadow-lg transition duration-300 overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5862.8836647836615!2d-83.4132661!3d42.7155382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824977850cbb25f%3A0x288c1ce52cbbbd2b!2sClarkston%20Glass!5e0!3m2!1sen!2sus!4v1743463797138!5m2!1sen!2sus"
                 width="100%"
@@ -69,13 +69,13 @@ const Contact = () => {
             </div>
           </div>
           {/* Contact Form (right column) */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-xl">
+          <div className="border p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-lg font-semibold text-gray-600 dark:text-gray-300 mb-2"
+                    className="block text-lg font-semibold text-[var(--text)] mb-2"
                   >
                     Name
                   </label>
@@ -86,14 +86,14 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter your name"
-                    className="w-full px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-[var(--text)]"
                     required
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-lg font-semibold text-gray-600 dark:text-gray-300 mb-2"
+                    className="block text-lg font-semibold text-[var(--text)] mb-2"
                   >
                     Email
                   </label>
@@ -104,7 +104,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Enter your email"
-                    className="w-full px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-[var(--text)]"
                     required
                   />
                 </div>
@@ -113,7 +113,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-lg font-semibold text-gray-600 dark:text-gray-300 mb-2"
+                    className="block text-lg font-semibold text-[var(--text)] mb-2"
                   >
                     Phone (Optional)
                   </label>
@@ -124,13 +124,13 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="Enter your phone number"
-                    className="w-full px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-[var(--text)]"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="service"
-                    className="block text-lg font-semibold text-gray-600 dark:text-gray-300 mb-2"
+                    className="block text-lg font-semibold text-[var(--text)] mb-2"
                   >
                     Service
                   </label>
@@ -139,7 +139,7 @@ const Contact = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-[var(--text)]"
                   >
                     <option value="Shower Door">Shower Door</option>
                     <option value="Window Repair">Window Repair</option>
@@ -156,7 +156,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-lg font-semibold text-gray-600 dark:text-gray-300 mb-2"
+                  className="block text-lg font-semibold text-[var(--text)] mb-2"
                 >
                   Message
                 </label>
@@ -167,14 +167,14 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="How can we help?"
                   rows={4}
-                  className="w-full px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-[var(--text)]"
                   required
                 ></textarea>
               </div>
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-blue-500 text-white py-3 px-8 rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
+                  className="bg-blue-500 text-white py-3 px-8 rounded-lg shadow hover:bg-blue-600 transition duration-300"
                 >
                   Submit Request
                 </button>

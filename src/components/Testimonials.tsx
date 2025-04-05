@@ -41,18 +41,18 @@ export default function Testimonials() {
     );
 
   return (
-    <section className="py-12 px-6 md:px-12 lg:px-24">
+    <section className="py-32 px-6 md:px-12 lg:px-24 bg-[#1f1f1f]">
       <div className="max-w-[1440px] mx-auto">
-        <h2 className="text-4xl font-bold mb-8 text-center text-white">
+        <h2 className="text-4xl font-bold mb-8 text-center text-[#cccccc]">
           What Our Clients Are Saying
         </h2>
         <div className="relative">
-          {/* Testimonial Card */}
-          <div className="border border-gray-800 bg-[#222] p-6 md:p-8 rounded-lg shadow transition duration-300 mx-auto max-w-3xl">
-            <p className="text-base md:text-lg text-white mb-6">
+          {/* Testimonial Card with fixed height */}
+          <div className="bg-[#1f1f1f] border border-[#cccccc] p-8 md:p-10 rounded-lg shadow-xl mx-auto max-w-3xl h-80 overflow-y-auto">
+            <p className="text-base md:text-lg text-[#cccccc] mb-6">
               “{testimonialsData[currentIndex].text}”
             </p>
-            <p className="text-right text-sm md:text-base font-medium text-white">
+            <p className="text-right text-sm md:text-base font-medium text-[#cccccc]">
               {testimonialsData[currentIndex].author}
             </p>
           </div>
@@ -60,15 +60,15 @@ export default function Testimonials() {
           <div className="absolute inset-0 flex items-center justify-between px-4">
             <button
               onClick={prevTestimonial}
-              className="border border-gray-800 bg-[#222] rounded-full p-2 shadow transition-colors"
+              className="bg-gray-800 hover:bg-gray-700 rounded-full p-2 shadow transition-colors"
             >
-              <ChevronLeftIcon className="h-6 w-6 text-white" />
+              <ChevronLeftIcon className="h-6 w-6 text-[#cccccc]" />
             </button>
             <button
               onClick={nextTestimonial}
-              className="border border-gray-800 bg-[#222] rounded-full p-2 shadow transition-colors"
+              className="bg-gray-800 hover:bg-gray-700 rounded-full p-2 shadow transition-colors"
             >
-              <ChevronRightIcon className="h-6 w-6 text-white" />
+              <ChevronRightIcon className="h-6 w-6 text-[#cccccc]" />
             </button>
           </div>
           {/* Pagination Dots */}
@@ -78,7 +78,7 @@ export default function Testimonials() {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`h-3 w-3 rounded-full mx-1 transition-colors ${
-                  index === currentIndex ? "bg-blue-500" : "bg-gray-500"
+                  index === currentIndex ? "bg-[#cccccc]" : "bg-gray-600"
                 }`}
               />
             ))}
