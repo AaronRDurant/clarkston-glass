@@ -46,9 +46,7 @@ const services = [
 export default function Services() {
   return (
     <div className="py-12 px-6 md:px-12 lg:px-24 max-w-[1440px] mx-auto">
-      <h1 className="text-4xl font-bold mb-8 text-[var(--text)]">
-        Our Services
-      </h1>
+      <h1 className="text-4xl font-bold mb-8 text-gray-900">Our Services</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
         {services.map((service, index) => (
           <div
@@ -63,13 +61,11 @@ export default function Services() {
                 height={40}
                 className="mr-4"
               />
-              <h2 className="text-2xl font-semibold text-[var(--text)]">
+              <h2 className="text-2xl font-semibold text-gray-900">
                 {service.title}
               </h2>
             </div>
-            <p className="text-base text-[var(--text)]">
-              {service.description}
-            </p>
+            <p className="text-base text-gray-800">{service.description}</p>
           </div>
         ))}
       </div>

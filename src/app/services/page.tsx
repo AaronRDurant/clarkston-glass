@@ -51,7 +51,7 @@ export default function ServicesPage() {
   return (
     <div className="mt-40 mb-12 px-6 md:px-12 lg:px-24">
       <div className="max-w-[1440px] mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-12 text-[var(--text)]">
+        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900">
           Our Services
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -70,13 +70,11 @@ export default function ServicesPage() {
                     className="rounded-lg"
                   />
                 </div>
-                <h2 className="text-2xl font-semibold text-[var(--text)] ml-4">
+                <h2 className="text-2xl font-semibold text-gray-900 ml-4">
                   {service.title}
                 </h2>
               </div>
-              <p className="text-base text-[var(--text)]">
-                {service.description}
-              </p>
+              <p className="text-base text-gray-800">{service.description}</p>
             </div>
           ))}
         </div>

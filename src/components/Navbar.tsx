@@ -8,27 +8,13 @@ import {
   FaceSmileIcon,
   MapPinIcon,
   PhoneIcon,
-  MoonIcon,
-  SunIcon,
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
 
 export default function Navbar() {
   const pathname = usePathname() || "/";
-  const [theme, setTheme] = useState("system");
-  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const showDarkModeToggle = true;
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storedTheme = localStorage.getItem("theme") || "system";
-      document.documentElement.setAttribute("data-theme", storedTheme);
-      setTheme(storedTheme);
-      setMounted(true);
-    }
-  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -38,13 +24,6 @@ export default function Navbar() {
     }
     return () => document.body.classList.remove("overflow-hidden");
   }, [isOpen]);
-
-  const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    document.documentElement.dataset.theme = newTheme;
-    localStorage.setItem("theme", newTheme);
-    setTheme(newTheme);
-  };
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -90,6 +69,7 @@ export default function Navbar() {
         <div className="w-[90%] max-w-5xl mx-auto flex justify-between items-center py-3 px-6">
           <Link
             href="/"
+            aria-label="Go to homepage"
             className="flex items-center transition duration-200 hover:scale-105 hover:opacity-90"
           >
             <Image
@@ -127,45 +107,14 @@ export default function Navbar() {
               );
             })}
           </ul>
-
-          {showDarkModeToggle && (
-            <div
-              onClick={toggleTheme}
-              className="relative ml-4 w-14 h-7 bg-gray-200/60 dark:bg-gray-700/60 rounded-full cursor-pointer transition-all duration-300 shadow-inner"
-            >
-              <div
-                className={`absolute top-0.5 left-0.5 w-6 h-6 bg-white dark:bg-gray-800 rounded-full shadow-md transition-all duration-300 ease-in-out transform ${
-                  theme === "light" ? "translate-x-7" : ""
-                }`}
-              >
-                {mounted && (
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    <SunIcon
-                      className={`absolute w-5 h-5 text-yellow-500 transition-all duration-300 ${
-                        theme === "light"
-                          ? "rotate-0 opacity-100 scale-100"
-                          : "-rotate-90 opacity-0 scale-50"
-                      }`}
-                    />
-                    <MoonIcon
-                      className={`absolute w-5 h-5 text-gray-900 dark:text-gray-300 transition-all duration-300 ${
-                        theme === "dark"
-                          ? "rotate-0 opacity-100 scale-100"
-                          : "rotate-90 opacity-0 scale-50"
-                      }`}
-                    />
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
         </div>
       </nav>
 
       {/* Mobile Header Bar */}
-      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-lg shadow-md h-14 px-4 flex items-center justify-between">
+      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-lg shadow-md h-16 px-4 flex items-center justify-between">
         <Link
           href="/"
+          aria-label="Go to homepage"
           onClick={() => setIsOpen(false)}
           className="flex items-center"
         >
@@ -176,13 +125,14 @@ export default function Navbar() {
             height={36}
             className="mr-2"
           />
-          <span className="text-[var(--text)] font-bold text-sm">
+          <span className="text-gray-900 font-bold text-sm">
             Clarkston Glass
           </span>
         </Link>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center space-x-2 text-[var(--text)] text-xs font-bold"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          className="flex items-center space-x-2 text-gray-900 text-xs font-bold"
         >
           <span>MENU</span>
           {isOpen ? (
@@ -193,41 +143,33 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Backdrop overlay to close mobile menu on outside tap */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-transparent"
+          onClick={() => setIsOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
       {/* Mobile Slide-Out Menu */}
       <nav
         className={`md:hidden fixed top-0 right-0 h-full z-40 bg-black/60 backdrop-blur-lg transition-transform w-full max-w-xs shadow-xl ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex justify-between items-center px-4 pt-4">
-          <Link
-            href="/"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center"
-          >
-            <Image
-              src="/Clarkston-Glass-logo.png"
-              alt="Clarkston Glass logo"
-              width={36}
-              height={36}
-              className="mr-2"
-            />
-            <span className="text-white font-bold text-base">
-              Clarkston Glass
-            </span>
-          </Link>
-          <button onClick={() => setIsOpen(false)} aria-label="Close menu">
-            <XMarkIcon className="h-6 w-6 text-white" />
-          </button>
-        </div>
-
-        <nav className="flex flex-col mt-8 space-y-5 px-6 text-lg font-semibold text-white">
+        <div className="flex flex-col pt-24 space-y-5 px-6 text-lg font-semibold text-white">
           {navLinks.map(({ name, href }) => (
-            <Link key={href} href={href} onClick={() => setIsOpen(false)}>
+            <Link
+              key={href}
+              href={href}
+              onClick={() => setIsOpen(false)}
+              aria-label={`Go to ${name}`}
+            >
               {name}
             </Link>
           ))}
-        </nav>
+        </div>
 
         <div className="mt-10 px-6 space-y-6">
           <Link
@@ -266,7 +208,7 @@ export default function Navbar() {
       </nav>
 
       {/* Spacer for fixed navs */}
-      <div className="h-[3.5rem] md:h-[5.5rem]" />
+      <div className="h-[4rem] md:h-[5.5rem]" />
     </>
   );
 }

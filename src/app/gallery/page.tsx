@@ -6,10 +6,10 @@ export default function GalleryPage() {
   return (
     <div className="mt-40 mb-12 px-6 md:px-12 lg:px-24">
       <div className="max-w-[1440px] mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8 text-[var(--text)]">
+        <h1 className="text-4xl font-bold text-center mb-8 text-gray-900">
           Gallery
         </h1>
-        <p className="text-center text-lg mb-12 text-[var(--text)]">
+        <p className="text-center text-lg mb-12 text-gray-800">
           Explore our collection of completed projects.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

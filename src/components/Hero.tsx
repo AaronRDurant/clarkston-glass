@@ -78,10 +78,10 @@ const Hero = () => {
       <div className="flex flex-col md:flex-row justify-between items-center pb-8">
         {/* Left side: Subtitle and Paragraph */}
         <div className="mb-12 md:mb-0 md:w-3/4">
-          <h2 className="text-left text-[70px] md:text-[60px] sm:text-[50px] font-extrabold leading-tight mb-6 text-[var(--text)] transition-all duration-300">
+          <h2 className="text-left text-[70px] md:text-[60px] sm:text-[50px] font-extrabold leading-tight mb-6 text-gray-900">
             Where Craft Meets Clarity
           </h2>
-          <p className="text-left text-base md:text-lg lg:text-xl mb-8 max-w-2xl leading-relaxed text-[var(--text)] transition-all duration-300">
+          <p className="text-left text-base md:text-lg lg:text-xl mb-8 max-w-2xl leading-relaxed text-gray-800">
             For over 30 years, Clarkston Glass has provided expert glass
             solutions, from custom mirrors to storefronts, with precision and
             lasting results. Trusted by homes and businesses across Southeast
@@ -89,7 +89,7 @@ const Hero = () => {
           </p>
 
           {/* Dynamic Status */}
-          <div className="flex items-center text-lg font-semibold transition-all duration-300 text-[var(--text)]">
+          <div className="flex items-center text-lg font-semibold text-gray-800">
             {status.includes("We're open") ? (
               <CheckCircleIcon className="h-6 w-6 text-green-500 mr-2" />
             ) : (
