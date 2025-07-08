@@ -60,6 +60,46 @@ body {
 }
 
 /* ==========================================================================
+   Light Section Themes
+   ========================================================================== */
+
+.section-light {
+  @apply bg-white text-gray-900;
+}
+
+.heading-light {
+  @apply text-gray-900 font-extrabold;
+}
+
+.subheading-light {
+  @apply text-gray-800 leading-relaxed;
+}
+
+.status-light {
+  @apply text-lg font-semibold text-gray-800;
+}
+
+/* ==========================================================================
+   Dark Section Themes
+   ========================================================================== */
+
+.section-dark {
+  @apply bg-neutral-900 text-white;
+}
+
+.card-dark {
+  @apply bg-neutral-800 border border-neutral-700;
+}
+
+.card-dark-heading {
+  @apply text-white;
+}
+
+.card-dark-text {
+  @apply text-neutral-300;
+}
+
+/* ==========================================================================
    Utility Overrides
    ========================================================================== */
 

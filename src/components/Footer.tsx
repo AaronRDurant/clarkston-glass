@@ -7,28 +7,30 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full px-6 py-12 bg-[#222] text-gray-100 border-t border-gray-700">
+    <footer className="section-dark w-full px-6 py-12 border-t border-neutral-700">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 items-start text-center md:text-left">
         {/* Left Column: Contact Info */}
         <div className="space-y-6">
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 opacity-70">
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-neutral-400">
               Contact Us
             </h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-4 justify-center md:justify-start">
                 <PhoneIcon className="h-5 w-5 text-blue-500 opacity-80" />
-                <span className="text-sm">248-625-5911</span>
+                <span className="text-base font-medium text-neutral-300 leading-relaxed">
+                  248-625-5911
+                </span>
               </div>
               <div className="flex items-center space-x-4 justify-center md:justify-start">
                 <MapPinIcon className="h-5 w-5 text-green-500 opacity-80" />
-                <address className="not-italic text-sm">
+                <address className="not-italic text-base font-medium text-neutral-300 leading-relaxed">
                   6577 Dixie Hwy, Clarkston, MI 48346
                 </address>
               </div>
               <div className="flex items-center space-x-4 justify-center md:justify-start">
                 <ClockIcon className="h-5 w-5 text-purple-500 opacity-80" />
-                <span className="text-sm">
+                <span className="text-base font-medium text-neutral-300 leading-relaxed">
                   Mon–Fri: 8 am – 5 pm, Sat: 8 am – 12 pm
                 </span>
               </div>
@@ -38,7 +40,7 @@ const Footer = () => {
 
         {/* Center Column: Divider and Social */}
         <div className="hidden md:block text-center">
-          <div className="h-24 w-px bg-gray-700 mx-auto mb-6" />
+          <div className="h-24 w-px bg-neutral-700 mx-auto mb-6" />
           <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 opacity-70">
             Connect
           </h3>
@@ -47,14 +49,14 @@ const Footer = () => {
               href="https://www.facebook.com/clarkstonglass"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-500 transition duration-300 transform hover:-translate-y-1"
+              className="text-neutral-400 hover:text-blue-500 transition duration-300 transform hover:-translate-y-1"
               aria-label="Facebook"
             >
               <FaFacebookF className="h-6 w-6" />
             </Link>
             <Link
               href="mailto:clarkstonglass@gmail.com"
-              className="text-gray-400 hover:text-blue-500 transition duration-300 transform hover:-translate-y-1"
+              className="text-neutral-400 hover:text-blue-500 transition duration-300 transform hover:-translate-y-1"
               rel="noopener noreferrer"
               aria-label="Email"
             >
