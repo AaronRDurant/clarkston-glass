@@ -73,22 +73,26 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="section-light section-wrapper py-24">
-      <div className="flex flex-col md:flex-row justify-between items-center">
+    <div className="section-light section-wrapper">
+      <div className="flex flex-col md:flex-row md:gap-12 lg:gap-0 justify-between items-center">
         {/* Left side: Subtitle and Paragraph */}
-        <div className="mb-12 md:mb-0 md:w-3/4">
-          <h2 className="text-left text-5xl font-bold heading-light leading-snug mb-6">
+        <div className="hero-container">
+          <h2 className="text-3xl md:text-[42px] lg:text-5xl font-bold heading-light hero-heading">
             Pairing craft with clarity.
           </h2>
-          <p className="text-left text-base md:text-lg lg:text-xl subheading-light leading-snug mb-8 max-w-2xl">
-            For over 30 years, Clarkston Glass has provided expert glass
-            solutions, from custom mirrors to storefronts, with precision and
-            lasting results. Trusted by homes and businesses across Southeast
-            Michigan.
+          <p className="text-base md:text-md lg:text-xl subheading-light hero-subheading max-w-md sm:max-w-lg md:max-w-2xl mx-auto md:mx-0 text-center md:text-left">
+            <span>
+              For over 30 years, Clarkston Glass has provided expert glass
+              solutions, from custom mirrors to storefronts, with precision and
+              lasting results.
+            </span>
+            <span className="hidden md:inline">
+              &nbsp;Trusted by homes and businesses across Southeast Michigan.
+            </span>
           </p>
 
           {/* Dynamic Status */}
-          <div className="flex items-center status-light">
+          <div className="hero-status">
             {status.includes("We're open") ? (
               <CheckCircleIcon className="h-6 w-6 text-green-500 mr-2" />
             ) : (
@@ -99,7 +103,7 @@ const Hero = () => {
         </div>
 
         {/* Right side: Image */}
-        <div className="md:w-1/2 w-full mb-12 md:mb-0 flex justify-center">
+        <div className="hero-image-wrapper">
           <Image
             src="/images/Clarkston-Glass-framed-shower.jpg"
             alt="Clarkston Glass framed shower project"
