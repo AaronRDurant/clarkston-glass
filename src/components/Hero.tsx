@@ -73,15 +73,14 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="section-light pt-40 section-wrapper">
-      {/* Hero Section - Flex Layout (Left and Right Split) */}
-      <div className="flex flex-col md:flex-row justify-between items-center pb-8">
+    <div className="section-light section-wrapper py-24">
+      <div className="flex flex-col md:flex-row justify-between items-center">
         {/* Left side: Subtitle and Paragraph */}
         <div className="mb-12 md:mb-0 md:w-3/4">
-          <h2 className="text-left text-[70px] md:text-[60px] sm:text-[50px] heading-light leading-tight mb-6">
-            Where Craft Meets Clarity
+          <h2 className="text-left text-5xl font-bold heading-light leading-snug mb-6">
+            Pairing craft with clarity.
           </h2>
-          <p className="text-left text-base md:text-lg lg:text-xl subheading-light mb-8 max-w-2xl">
+          <p className="text-left text-base md:text-lg lg:text-xl subheading-light leading-snug mb-8 max-w-2xl">
             For over 30 years, Clarkston Glass has provided expert glass
             solutions, from custom mirrors to storefronts, with precision and
             lasting results. Trusted by homes and businesses across Southeast
