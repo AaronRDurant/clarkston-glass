@@ -73,7 +73,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="section-light pt-40 px-6 md:px-12 lg:px-24 max-w-[1440px] mx-auto">
+    <div className="section-light pt-40 section-wrapper">
       {/* Hero Section - Flex Layout (Left and Right Split) */}
       <div className="flex flex-col md:flex-row justify-between items-center pb-8">
         {/* Left side: Subtitle and Paragraph */}

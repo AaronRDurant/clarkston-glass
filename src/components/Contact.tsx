@@ -26,8 +26,8 @@ const Contact = () => {
   };
 
   return (
-    <section className="section-dark py-12 px-6 md:px-12 lg:px-24">
-      <div className="max-w-[1440px] mx-auto">
+    <section className="section-dark py-12">
+      <div className="section-wrapper">
         <h2 className="text-4xl font-bold mb-8 text-center card-dark-heading">
           Get in Touch
         </h2>
@@ -38,7 +38,12 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold">Clarkston Glass</h3>
               <div className="flex items-center space-x-4 justify-center md:justify-start">
                 <PhoneIcon className="h-5 w-5 text-blue-400 opacity-80" />
-                <span className="text-lg font-medium">248-625-5911</span>
+                <a
+                  href="tel:2486255911"
+                  className="text-lg font-medium hover:underline"
+                >
+                  248-625-5911
+                </a>
               </div>
               <div className="flex items-center space-x-4 justify-center md:justify-start">
                 <MapPinIcon className="h-5 w-5 text-green-400 opacity-80" />

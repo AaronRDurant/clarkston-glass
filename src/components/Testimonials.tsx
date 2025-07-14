@@ -41,8 +41,8 @@ export default function Testimonials() {
     );
 
   return (
-    <section className="section-light py-32 px-6 md:px-12 lg:px-24">
-      <div className="max-w-[1440px] mx-auto">
+    <section className="section-light py-32">
+      <div className="section-wrapper">
         <h2 className="text-4xl font-bold mb-8 text-center heading-light">
           What Our Clients Are Saying
         </h2>

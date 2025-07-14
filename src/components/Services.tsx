@@ -46,7 +46,7 @@ const services = [
 export default function Services() {
   return (
     <div className="section-dark w-full">
-      <div className="py-12 px-6 md:px-12 lg:px-24 max-w-[1440px] mx-auto">
+      <div className="section-wrapper py-12">
         <h1 className="text-4xl font-bold mb-8 card-dark-heading">
           Our Services
         </h1>
