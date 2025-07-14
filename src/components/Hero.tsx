@@ -110,9 +110,6 @@ const Hero = () => {
           />
         </div>
       </div>
-
-      {/* Divider to break Hero Section from the next section */}
-      <div className="w-full h-1 bg-gradient-to-r from-transparent via-gray-500 my-8 to-transparent"></div>
     </div>
   );
 };
