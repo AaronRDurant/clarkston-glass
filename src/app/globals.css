@@ -88,19 +88,19 @@ body {
    ========================================================================== */
 
 .section-dark {
-  @apply bg-neutral-900 text-white;
+  @apply bg-[#0a0a0a] text-neutral-200;
 }
 
 .card-dark {
-  @apply bg-neutral-800 border border-neutral-700;
+  @apply bg-neutral-900 border border-neutral-800;
 }
 
 .card-dark-heading {
-  @apply text-white;
+  @apply text-neutral-100;
 }
 
 .card-dark-text {
-  @apply text-neutral-300;
+  @apply text-neutral-400;
 }
 
 /* ==========================================================================

@@ -47,14 +47,14 @@ export default function Services() {
   return (
     <div className="section-dark w-full">
       <div className="section-wrapper py-12">
-        <h1 className="text-4xl font-bold mb-8 card-dark-heading">
+        <h1 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8 card-dark-heading">
           Our Services
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="card-dark p-6 rounded-lg shadow hover:shadow-lg transition duration-300"
+              className="card-dark p-5 md:p-6 rounded-lg shadow hover:shadow-lg transition duration-300"
             >
               <div className="flex items-center mb-4">
                 <Image
@@ -62,13 +62,15 @@ export default function Services() {
                   alt={service.title}
                   width={40}
                   height={40}
-                  className="mr-4"
+                  className="w-10 h-10 mr-4 rounded"
                 />
-                <h2 className="text-2xl font-semibold card-dark-heading">
+                <h2 className="text-xl md:text-2xl font-semibold card-dark-heading">
                   {service.title}
                 </h2>
               </div>
-              <p className="text-base card-dark-text">{service.description}</p>
+              <p className="text-base md:text-base leading-snug card-dark-text">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
