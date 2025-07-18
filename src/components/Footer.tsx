@@ -49,14 +49,14 @@ const Footer = () => {
               href="https://www.facebook.com/clarkstonglass"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-400 hover:text-blue-500 transition duration-300 transform hover:-translate-y-1"
+              className="text-neutral-400 hover:text-blue-500 hover:shadow-md transition duration-300 transform hover:-translate-y-1"
               aria-label="Facebook"
             >
               <FaFacebookF className="h-5 w-5" />
             </Link>
             <Link
               href="mailto:clarkstonglass@gmail.com"
-              className="text-neutral-400 hover:text-blue-500 transition duration-300 transform hover:-translate-y-1"
+              className="text-neutral-400 hover:text-blue-500 hover:shadow-md transition duration-300 transform hover:-translate-y-1"
               rel="noopener noreferrer"
               aria-label="Email"
             >

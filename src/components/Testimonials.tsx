@@ -29,10 +29,7 @@ export default function Testimonials() {
       <div className="section-wrapper py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
           {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white border border-gray-200 rounded-xl p-6 shadow-md text-center flex flex-col items-center"
-            >
+            <div key={index} className="testimonial-card">
               <div className="flex items-center justify-center mb-4">
                 {Array(5)
                   .fill(0)

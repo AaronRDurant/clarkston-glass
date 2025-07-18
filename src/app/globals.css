@@ -68,19 +68,23 @@ body {
    ========================================================================== */
 
 .section-light {
-  @apply bg-white text-gray-900;
+  @apply bg-[#f9f9f9] text-[#1f1f1f];
 }
 
 .heading-light {
-  @apply text-gray-900 font-extrabold;
+  @apply text-[#1a1a1a] font-extrabold;
 }
 
 .subheading-light {
-  @apply text-gray-800 leading-normal md:leading-normal;
+  @apply text-[#333333] leading-relaxed md:leading-normal;
 }
 
 .status-light {
-  @apply text-lg font-semibold text-gray-800;
+  @apply text-base font-semibold text-[#444];
+}
+
+.testimonial-card {
+  @apply bg-white border border-gray-200 rounded-xl p-6 shadow-sm text-center flex flex-col items-center;
 }
 
 /* ==========================================================================
