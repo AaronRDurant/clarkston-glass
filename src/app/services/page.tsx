@@ -6,75 +6,92 @@ const services = [
   {
     title: "Window Repairs",
     description:
-      "Expert window repairs: replace just the glass with energy-efficient options and custom fits. We offer comprehensive solutions that save you money while enhancing energy efficiency.",
+      "We replace foggy, broken, or inefficient glass without the cost of full window replacement. Choose from Low-E and Argon-filled insulated units, or let us custom-fit trapezoids and other special shapes. We can even match existing window grid patterns.",
     icon: "/images/Clarkston-Glass-framed-shower.jpg",
-    link: "/services/window-repairs",
+    badge: "Energy Efficient • Residential & Commercial",
   },
   {
-    title: "Shower Doors",
+    title: "Cabinet Glass & Tabletops",
     description:
-      "Custom European shower doors built from 3/8” thick glass with diverse finish options. Our installations provide both safety and modern elegance for your bathroom.",
+      "From textured cabinet inserts to polished tabletop glass, we cut and finish pieces to match your design goals. Available in ribbed, frosted, antique, patterned, and more — ideal for kitchen upgrades or custom furniture.",
     icon: "/images/Clarkston-Glass-framed-shower.jpg",
-    link: "/services/shower-doors",
+    badge: "Textured, Antique & Custom Cut",
   },
   {
     title: "Custom Mirrors",
     description:
-      "Expertly crafted custom mirrors that elevate your space. Designed with precision, our mirrors combine aesthetic appeal with practical functionality.",
+      "Our custom mirrors add light, style, and space to any room. Whether framed or frameless, we precision-cut each mirror to fit your bathroom, hallway, gym, or studio wall. Installation included.",
     icon: "/images/Clarkston-Glass-framed-shower.jpg",
-    link: "/services/custom-mirrors",
+    badge: "Residential & Commercial • Made to Measure",
   },
   {
     title: "Auto Glass",
     description:
-      "NGA-certified auto glass repair and replacement. We deliver fast, reliable services to get your vehicle back on the road safely and efficiently.",
+      "Certified auto glass repair and replacement for cars, trucks, and SUVs. Our NGA-certified team ensures a safe, professional install that gets you back on the road fast.",
     icon: "/images/Clarkston-Glass-framed-shower.jpg",
-    link: "/services/auto-glass",
+    badge: "NGA-Certified • Fast Turnaround",
   },
   {
     title: "Glass Doors & Walls",
     description:
-      "Elegant glass doors and walls built with premium glass and customizable hardware. Enhance any space with our modern, stylish installations.",
+      "Elegant, frameless or framed glass doors and interior walls with custom hardware options. Great for offices, showers, or modern home upgrades — built to spec with top-tier materials.",
     icon: "/images/Clarkston-Glass-framed-shower.jpg",
-    link: "/services/glass-doors-walls",
+    badge: "Residential & Commercial • Custom Hardware",
   },
   {
     title: "Storefront Solutions",
     description:
-      "Expert commercial glass for storefronts, entry doors, and more. With decades of experience, we combine durability and style to meet your business needs.",
+      "We design, build, and install commercial-grade storefront systems — including entry doors, fixed panels, and curtain walls. Durable and clean installs tailored to your brand.",
     icon: "/images/Clarkston-Glass-framed-shower.jpg",
-    link: "/services/storefronts",
+    badge: "Commercial-Grade • Entry Systems & Panels",
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <div className="mt-40 mb-12 px-6 md:px-12 lg:px-24">
-      <div className="max-w-[1440px] mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900">
-          Our Services
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div className="bg-[#f9f9f9] py-16 md:py-24 px-4 md:px-10">
+      <div className="max-w-[1280px] mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12 md:mb-16">
+          <p className="text-sm uppercase tracking-widest text-blue-700 font-semibold mb-3">
+            What We Do
+          </p>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+            Glass Solutions Tailored to Your Space
+          </h1>
+          <p className="mt-4 max-w-2xl mx-auto text-gray-600 text-base md:text-lg">
+            From mirrors and tabletops to custom storefronts, our team brings
+            clarity, precision, and craftsmanship to every project.
+          </p>
+        </div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="border p-6 rounded-lg shadow hover:shadow-lg transition duration-300"
+              className="cursor-pointer transform hover:scale-[1.015] hover:shadow-md transition-all duration-300 flex items-start bg-white border border-gray-200 rounded-xl p-6"
             >
-              <div className="flex items-center mb-4">
-                <div className="flex-shrink-0">
-                  <Image
-                    src={service.icon}
-                    alt={service.title}
-                    width={80}
-                    height={80}
-                    className="rounded-lg"
-                  />
-                </div>
-                <h2 className="text-2xl font-semibold text-gray-900 ml-4">
+              <div className="flex-shrink-0 mr-5">
+                <Image
+                  src={service.icon}
+                  alt={service.title}
+                  width={72}
+                  height={72}
+                  className="rounded-lg object-cover"
+                />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold text-gray-900 mb-1">
                   {service.title}
                 </h2>
+                <div className="inline-block px-2 py-1 text-[11px] md:text-sm font-semibold text-blue-800 bg-blue-100 rounded mb-3">
+                  {service.badge}
+                </div>
+                <p className="text-sm md:text-[17px] text-gray-700 leading-relaxed">
+                  {service.description}
+                </p>
               </div>
-              <p className="text-base text-gray-800">{service.description}</p>
             </div>
           ))}
         </div>

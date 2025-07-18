@@ -6,40 +6,34 @@ const services = [
     description:
       "Expert window repairs: replace just the glass with energy-efficient options and custom fits.",
     icon: "/images/Clarkston-Glass-framed-shower.jpg",
-    link: "/services/window-repairs",
   },
   {
-    title: "Shower Doors",
+    title: "Cabinet Glass & Tabletops",
     description:
-      "Custom European shower doors built from 3/8” thick glass with diverse finish options.",
+      "Custom-cut glass for cabinet doors and tabletops — including textured, patterned, and antique options.",
     icon: "/images/Clarkston-Glass-framed-shower.jpg",
-    link: "/services/shower-doors",
   },
   {
     title: "Custom Mirrors",
     description: "Expertly crafted custom mirrors that elevate your space.",
     icon: "/images/Clarkston-Glass-framed-shower.jpg",
-    link: "/services/custom-mirrors",
   },
   {
     title: "Auto Glass",
     description: "NGA-certified auto glass repair and replacement.",
     icon: "/images/Clarkston-Glass-framed-shower.jpg",
-    link: "/services/auto-glass",
   },
   {
     title: "Glass Doors & Walls",
     description:
       "Elegant glass doors and walls built with premium glass and customizable hardware.",
     icon: "/images/Clarkston-Glass-framed-shower.jpg",
-    link: "/services/glass-doors-walls",
   },
   {
     title: "Storefront Solutions",
     description:
       "Expert commercial glass for storefronts, entry doors, and more.",
     icon: "/images/Clarkston-Glass-framed-shower.jpg",
-    link: "/services/storefronts",
   },
 ];
 
