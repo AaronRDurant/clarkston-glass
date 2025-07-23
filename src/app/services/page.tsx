@@ -7,42 +7,42 @@ const services = [
     title: "Window Repairs",
     description:
       "We replace foggy, broken, or inefficient glass without the cost of full window replacement. Choose energy-efficient Low-E and Argon-filled units, or let us custom-fit trapezoids and other special shapes. We can even match your existing window grid patterns.",
-    icon: "/images/Clarkston-Glass-window-repair.jpg",
+    icon: "/images/services/Clarkston-Glass-window-repair.jpg",
     badge: "Energy Efficient • Residential & Commercial",
   },
   {
     title: "Cabinet Glass & Tabletops",
     description:
       "We custom-cut glass for cabinet doors and tabletop surfaces in a wide range of textures, finishes, and shapes. Choose from ribbed, frosted, antique, patterned, and other specialty styles to enhance your furniture, kitchen cabinets, or dining areas. From sleek modern to vintage-inspired, every piece is precision-cut to match your design vision.",
-    icon: "/images/Clarkston-Glass-table-top.jpg",
+    icon: "/images/services/Clarkston-Glass-table-top.jpg",
     badge: "Textured, Antique & Custom Cut",
   },
   {
     title: "Custom Mirrors",
     description:
       "We design and install custom mirrors that elevate any space — from bathrooms and hallways to gyms and studio walls. Choose from beveled, antique, or wall-mounted styles, framed or frameless, all precision-cut to fit your layout and aesthetic.",
-    icon: "/images/Clarkston-Glass-custom-mirror.jpg",
+    icon: "/images/services/Clarkston-Glass-custom-mirror.jpg",
     badge: "Residential & Commercial • Made to Measure",
   },
   {
     title: "Auto Glass",
     description:
       "We repair and replace windshields, door glass, and back glass for all makes and models — fast. Our NGA-certified techs offer mobile service, rock chip repair, and work with all major insurance providers to get you safely back on the road.",
-    icon: "/images/Clarkston-Glass-auto-glass-repair-replacement.jpg",
+    icon: "/images/services/Clarkston-Glass-auto-glass-repair-replacement.jpg",
     badge: "Mobile Service • Insurance Accepted",
   },
   {
     title: "Glass Doors & Walls",
     description:
       "From luxury glass entry doors to sleek interior partitions, we custom-build frameless and framed solutions with premium hardware. Popular in offices, churches, and high-end storefronts, our heavy-glass systems deliver a refined, upscale finish — built to your exact specs.",
-    icon: "/images/Clarkston-Glass-door-wall.jpg",
+    icon: "/images/services/Clarkston-Glass-door-wall.jpg",
     badge: "Frameless Entry Systems • Custom Hardware",
   },
   {
     title: "Storefront Solutions",
     description:
       "With over 30 years of experience, we partner with business owners, contractors, and developers to deliver clean, durable storefront systems. From glass entry doors and fixed panels to conference tabletops and curtain walls — every install is tailored to your space and brand.",
-    icon: "/images/Clarkston-Glass-commercial-storefront.jpg",
+    icon: "/images/services/Clarkston-Glass-commercial-storefront.jpg",
     badge: "Commercial-Grade • Entry Systems & Custom Installs",
   },
 ];
