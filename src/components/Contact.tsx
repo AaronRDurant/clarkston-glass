@@ -18,45 +18,91 @@ const Contact = ({
     phone: "",
     service: "Shower Door",
     message: "",
+    _gotcha: "", // 👈 honeypot field
   });
 
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    if (name === "phone") {
+      const cleaned = value.replace(/\D/g, "");
+      let formatted = cleaned;
+
+      if (cleaned.length > 3 && cleaned.length <= 6) {
+        formatted = `${cleaned.slice(0, 3)}-${cleaned.slice(3)}`;
+      } else if (cleaned.length > 6) {
+        formatted = `${cleaned.slice(0, 3)}-${cleaned.slice(
+          3,
+          6
+        )}-${cleaned.slice(6, 10)}`;
+      }
+
+      setFormData((prev) => ({ ...prev, [name]: formatted }));
+      return;
+    }
+
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
+  const isValidEmail = (email: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus("idle"); // Reset on new submit
 
-    const response = await fetch("https://formspree.io/f/mdkdejkk", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    if (isSubmitting) return; // prevent double submit
+    setIsSubmitting(true);
+    setStatus("idle");
 
-    if (response.ok) {
+    if (formData._gotcha) {
       setStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service: "Shower Door",
-        message: "",
-      });
-    } else {
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!isValidEmail(formData.email)) {
       setStatus("error");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch("https://formspree.io/f/mdkdejkk", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "Shower Door",
+          message: "",
+          _gotcha: "",
+        });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Form submission failed:", error);
+      setStatus("error");
+    } finally {
+      setIsSubmitting(false); // ✅ always clear this, success or fail
     }
   };
-
   return (
     <section
       className={`w-full antialiased leading-relaxed tracking-tight ${
@@ -255,26 +301,42 @@ const Contact = ({
                   required
                 ></textarea>
               </div>
+              <input
+                type="text"
+                name="_gotcha"
+                value={formData._gotcha}
+                onChange={handleChange}
+                className="hidden"
+                aria-hidden="true"
+                tabIndex={-1}
+              />
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-blue-500 text-white text-sm md:text-base font-medium py-2 md:py-2.5 px-5 md:px-6 rounded-md shadow-sm hover:bg-blue-600 transition-colors duration-200"
+                  disabled={isSubmitting}
+                  className={`bg-blue-500 text-white text-sm md:text-base font-medium py-2 md:py-2.5 px-5 md:px-6 rounded-md shadow-sm transition-colors duration-200 ${
+                    isSubmitting
+                      ? "opacity-60 cursor-not-allowed"
+                      : "hover:bg-blue-600"
+                  }`}
                 >
                   Submit Request
                 </button>
               </div>
             </form>
-            {status === "success" && (
-              <p className="mt-4 text-green-600 font-medium text-center">
-                Thanks! Your message has been sent.
-              </p>
-            )}
+            <div aria-live="polite">
+              {status === "success" && (
+                <p className="mt-4 text-green-600 font-medium text-center">
+                  Thanks! Your message has been sent.
+                </p>
+              )}
 
-            {status === "error" && (
-              <p className="mt-4 text-red-600 font-medium text-center">
-                Something went wrong. Please try again or call us directly.
-              </p>
-            )}
+              {status === "error" && (
+                <p className="mt-4 text-red-600 font-medium text-center">
+                  Something went wrong. Please try again or call us directly.
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </div>
