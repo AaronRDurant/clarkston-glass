@@ -3,7 +3,15 @@
 import { useState } from "react";
 import { PhoneIcon, MapPinIcon, ClockIcon } from "@heroicons/react/24/solid";
 
-const Contact = () => {
+const Contact = ({
+  variant = "dark",
+  hideTitle = false,
+}: {
+  variant?: "dark" | "light";
+  hideTitle?: boolean;
+}) => {
+  const isDark = variant === "dark";
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,15 +34,35 @@ const Contact = () => {
   };
 
   return (
-    <section className="section-dark w-full antialiased text-gray-100 leading-relaxed tracking-tight">
-      <div className="section-wrapper py-12">
-        <h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8 card-dark-heading text-left md:text-center tracking-tight leading-tight">
-          Get in Touch
-        </h2>
+    <section
+      className={`w-full antialiased leading-relaxed tracking-tight ${
+        isDark ? "text-gray-100 section-dark" : "text-gray-900 bg-[#f9f9f9]"
+      }`}
+    >
+      <div
+        className={`w-full ${
+          hideTitle ? "pt-0 pb-0" : "py-16 md:py-24 px-4 md:px-10"
+        } max-w-[1280px] mx-auto`}
+      >
+        {!hideTitle && (
+          <h2
+            className={`text-2xl md:text-4xl font-bold mb-6 md:mb-8 tracking-tight leading-tight ${
+              isDark
+                ? "card-dark-heading text-left md:text-center"
+                : "text-center"
+            }`}
+          >
+            Get in Touch
+          </h2>
+        )}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
           {/* Office Info & Map (left column) */}
           <div className="flex flex-col space-y-8">
-            <div className="card-dark p-5 md:p-6 rounded-lg shadow hover:shadow-lg transition duration-300 flex flex-col space-y-4">
+            <div
+              className={`p-5 md:p-6 rounded-lg shadow hover:shadow-lg transition duration-300 flex flex-col space-y-4 ${
+                isDark ? "card-dark" : "bg-white border border-gray-200"
+              }`}
+            >
               <h3 className="text-xl md:text-2xl font-semibold tracking-tight leading-tight">
                 Clarkston Glass
               </h3>
@@ -60,7 +88,11 @@ const Contact = () => {
                 </span>
               </div>
             </div>
-            <div className="card-dark rounded-lg shadow hover:shadow-lg transition duration-300 overflow-hidden hidden md:block">
+            <div
+              className={`rounded-lg shadow hover:shadow-lg transition duration-300 overflow-hidden hidden md:block ${
+                isDark ? "card-dark" : "bg-white border border-gray-200"
+              }`}
+            >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5862.8836647836615!2d-83.4132661!3d42.7155382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824977850cbb25f%3A0x288c1ce52cbbbd2b!2sClarkston%20Glass!5e0!3m2!1sen!2sus!4v1743463797138!5m2!1sen!2sus"
                 width="100%"
@@ -71,8 +103,13 @@ const Contact = () => {
               ></iframe>
             </div>
           </div>
+
           {/* Contact Form (right column) */}
-          <div className="card-dark p-5 md:p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
+          <div
+            className={`p-5 md:p-6 rounded-lg shadow hover:shadow-lg transition duration-300 ${
+              isDark ? "card-dark" : "bg-white border border-gray-200"
+            }`}
+          >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -89,7 +126,11 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter your name"
-                    className="w-full px-4 py-2 border border-neutral-700 rounded-lg bg-neutral-950 text-white tracking-normal leading-snug focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className={`w-full px-4 py-2 rounded-lg tracking-normal leading-snug focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      isDark
+                        ? "border border-neutral-700 bg-neutral-950 text-white"
+                        : "border border-gray-300 bg-white text-gray-900"
+                    }`}
                     required
                   />
                 </div>
@@ -107,7 +148,11 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Enter your email"
-                    className="w-full px-4 py-2 border border-neutral-700 rounded-lg bg-neutral-950 text-white tracking-normal leading-snug focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className={`w-full px-4 py-2 rounded-lg tracking-normal leading-snug focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      isDark
+                        ? "border border-neutral-700 bg-neutral-950 text-white"
+                        : "border border-gray-300 bg-white text-gray-900"
+                    }`}
                     required
                   />
                 </div>
@@ -127,7 +172,11 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="Enter your phone number"
-                    className="w-full px-4 py-2 border border-neutral-700 rounded-lg bg-neutral-950 text-white tracking-normal leading-snug focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className={`w-full px-4 py-2 rounded-lg tracking-normal leading-snug focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      isDark
+                        ? "border border-neutral-700 bg-neutral-950 text-white"
+                        : "border border-gray-300 bg-white text-gray-900"
+                    }`}
                   />
                 </div>
                 <div>
@@ -142,7 +191,11 @@ const Contact = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-neutral-700 rounded-lg bg-neutral-950 text-white tracking-normal leading-snug focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className={`w-full px-4 py-2 rounded-lg tracking-normal leading-snug focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      isDark
+                        ? "border border-neutral-700 bg-neutral-950 text-white"
+                        : "border border-gray-300 bg-white text-gray-900"
+                    }`}
                   >
                     <option value="Shower Door">Shower Door</option>
                     <option value="Window Repair">Window Repair</option>
@@ -170,7 +223,11 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="How can we help?"
                   rows={4}
-                  className="w-full px-4 py-2 border border-neutral-700 rounded-lg bg-neutral-950 text-white tracking-normal leading-snug focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className={`w-full px-4 py-2 rounded-lg tracking-normal leading-snug focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                    isDark
+                      ? "border border-neutral-700 bg-neutral-950 text-white"
+                      : "border border-gray-300 bg-white text-gray-900"
+                  }`}
                   required
                 ></textarea>
               </div>
