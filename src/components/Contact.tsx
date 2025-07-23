@@ -20,6 +20,8 @@ const Contact = ({
     message: "",
   });
 
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -28,9 +30,31 @@ const Contact = ({
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setStatus("idle"); // Reset on new submit
+
+    const response = await fetch("https://formspree.io/f/mdkdejkk", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "Shower Door",
+        message: "",
+      });
+    } else {
+      setStatus("error");
+    }
   };
 
   return (
@@ -240,6 +264,17 @@ const Contact = ({
                 </button>
               </div>
             </form>
+            {status === "success" && (
+              <p className="mt-4 text-green-600 font-medium text-center">
+                Thanks! Your message has been sent.
+              </p>
+            )}
+
+            {status === "error" && (
+              <p className="mt-4 text-red-600 font-medium text-center">
+                Something went wrong. Please try again or call us directly.
+              </p>
+            )}
           </div>
         </div>
       </div>
