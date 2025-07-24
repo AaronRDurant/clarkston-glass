@@ -35,8 +35,8 @@ export default function Navbar() {
   return (
     <>
       {/* Top Info Bar */}
-      <div className="hidden md:flex justify-center fixed top-0 left-0 w-full z-50 h-11 md:h-12 px-6 bg-blue-900 border-b border-blue-800">
-        <div className="max-w-5xl mx-auto w-full px-6 flex justify-between items-center text-neutral-200 text-[13px] leading-tight tracking-tight">
+      <div className="hidden md:flex justify-center fixed top-0 left-0 w-full z-50 h-[42px] px-6 bg-blue-900 border-b border-blue-800">
+        <div className="max-w-5xl mx-auto w-full px-4 flex justify-between items-center text-neutral-200 text-[12.5px] leading-[1.1rem] tracking-tight">
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-1">
               <MapPinIcon className="h-4 w-4 text-white/90" />
@@ -52,18 +52,12 @@ export default function Navbar() {
               <PhoneIcon className="h-4 w-4 text-white/90" />
               <span>248-625-5911</span>
             </div>
-            <Link
-              href="/contact"
-              className="bg-yellow-400 text-gray-900 px-3 py-[5px] rounded font-semibold hover:bg-yellow-300 transition text-sm"
-            >
-              Get a Free Estimate
-            </Link>
           </div>
         </div>
-      </div>{" "}
+      </div>
       {/* Desktop + Tablet Nav */}
-      <nav className="hidden md:flex fixed top-12 left-0 w-full z-40 bg-[#0a0a0a] text-neutral-200 shadow-md border-b border-neutral-800 h-[64px]">
-        <div className="w-[90%] max-w-5xl mx-auto px-6 flex justify-between items-center text-neutral-200 text-[13px] leading-tight tracking-tight">
+      <nav className="hidden md:flex fixed top-[42px] left-0 w-full z-40 bg-[#0a0a0a] text-neutral-200 shadow-md border-b border-neutral-800 h-[56px]">
+        <div className="w-[90%] max-w-5xl mx-auto px-4 flex justify-between items-center text-neutral-200 text-[13px] leading-tight tracking-tight">
           <Link
             href="/"
             aria-label="Go to homepage"
@@ -75,7 +69,7 @@ export default function Navbar() {
               width={100}
               height={57}
               loading="lazy"
-              className="object-contain"
+              className="object-contain -mt-2"
             />
           </Link>
 
@@ -107,7 +101,7 @@ export default function Navbar() {
         </div>
       </nav>
       {/* Mobile Header Bar */}
-      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a] text-neutral-200 shadow-md h-16 px-4 flex items-center justify-between">
+      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a] text-neutral-200 shadow-md h-14 px-4 flex items-center justify-between">
         <Link
           href="/"
           aria-label="Go to homepage"
@@ -118,11 +112,11 @@ export default function Navbar() {
             <Image
               src="/Clarkston-Glass-logo.png"
               alt="Clarkston Glass logo"
-              width={40}
-              height={40}
+              width={48}
+              height={48}
               className="object-contain"
             />
-            <span className="text-sm font-semibold text-white tracking-tight leading-tight">
+            <span className="text-base sm:text-lg font-semibold text-white tracking-tight leading-snug antialiased">
               Clarkston Glass
             </span>
           </div>
@@ -204,7 +198,7 @@ export default function Navbar() {
         </div>
       </nav>
       {/* Spacer for fixed navs */}
-      <div className="h-[4rem] md:h-[5.5rem]" />
+      <div className="h-[56px] md:h-[84px]" />
     </>
   );
 }
