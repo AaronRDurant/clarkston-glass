@@ -1,4 +1,32 @@
-"use client";
+export const metadata = {
+  title: "Gallery • Clarkston Glass",
+  description:
+    "View our custom glasswork — showers, mirrors, railings, storefronts, and more. Precision-crafted in Clarkston, MI.",
+  openGraph: {
+    title: "Gallery • Clarkston Glass",
+    description:
+      "View our custom glasswork — showers, mirrors, railings, storefronts, and more. Precision-crafted in Clarkston, MI.",
+    url: "https://www.clarkstonglass.net/gallery",
+    siteName: "Clarkston Glass",
+    images: [
+      {
+        url: "/images/og/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Clarkston Glass — Custom Glass Solutions",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gallery • Clarkston Glass",
+    description:
+      "View our custom glasswork — showers, mirrors, railings, storefronts, and more. Precision-crafted in Clarkston, MI.",
+    images: ["/images/og/og-default.jpg"],
+  },
+};
 
 import Image from "next/image";
 

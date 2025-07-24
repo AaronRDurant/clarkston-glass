@@ -1,4 +1,32 @@
-"use client";
+export const metadata = {
+  title: "Services • Clarkston Glass",
+  description:
+    "Explore our custom glass services — mirrors, tabletops, auto glass, storefronts, and more. Precision-cut and professionally installed in Clarkston, MI.",
+  openGraph: {
+    title: "Services • Clarkston Glass",
+    description:
+      "Explore our custom glass services — mirrors, tabletops, auto glass, storefronts, and more. Precision-cut and professionally installed in Clarkston, MI.",
+    url: "https://www.clarkstonglass.net/services",
+    siteName: "Clarkston Glass",
+    images: [
+      {
+        url: "/images/og/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Clarkston Glass — Custom Glass Solutions",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services • Clarkston Glass",
+    description:
+      "Explore our custom glass services — mirrors, tabletops, auto glass, storefronts, and more. Precision-cut and professionally installed in Clarkston, MI.",
+    images: ["/images/og/og-default.jpg"],
+  },
+};
 
 import Image from "next/image";
 

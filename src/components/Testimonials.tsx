@@ -16,7 +16,7 @@ const testimonials = [
     text: "Took a stone chip to the windshield on I-75 — drove straight to Clarkston Glass and was back on the road 15 minutes later. Perfect repair.",
   },
   {
-    text: "We’ve used them for two projects years apart — consistently great service, fair prices, and top-notch installation both times.",
+    text: "We've used them for two projects years apart — consistently great service, fair prices, and top-notch installation both times.",
   },
   {
     text: "There was a mishap with our shower door hardware and they replaced it with no arguing or extra cost. Friendly and professional throughout.",
