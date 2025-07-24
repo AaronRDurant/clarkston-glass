@@ -29,6 +29,10 @@ export const metadata: Metadata = {
     description: "High-quality glass services in Clarkston, MI.",
     images: ["/images/og/og-default.jpg"],
   },
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -36,6 +40,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#1D4ED8" />
+      </head>
       <body className="bg-white text-[#2c2c2c] antialiased min-h-screen flex flex-col">
         <script
           type="application/ld+json"
