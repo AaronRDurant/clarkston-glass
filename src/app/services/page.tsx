@@ -34,9 +34,9 @@ const services = [
   {
     title: "Window Repairs",
     description:
-      "We replace foggy, broken, or inefficient glass without the cost of full window replacement. Choose energy-efficient Low-E and Argon-filled units, or let us custom-fit trapezoids and other special shapes. We can even match your existing window grid patterns.",
+      "We replace foggy, broken, or inefficient glass without the cost of full window replacement. Choose energy-efficient Low-E and Argon-filled units, or let us custom-fit trapezoids and other special shapes. We can even match your existing window grid patterns. We also repair and re-screen window and patio door screens for a like-new fit.",
     icon: "/images/services/Clarkston-Glass-window-repair.jpg",
-    badge: "Energy Efficient • Residential & Commercial",
+    badge: "Energy Efficient • Residential & Commercial • Screens Repaired",
   },
   {
     title: "Cabinet Glass & Tabletops",

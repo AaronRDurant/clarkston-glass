@@ -4,7 +4,7 @@ const services = [
   {
     title: "Window Repairs",
     description:
-      "Expert window repairs: replace just the glass with energy-efficient options and custom fits.",
+      "Expert window repairs: replace just the glass with energy-efficient options and custom fits — plus screen repair & re-screening.",
     icon: "/images/Clarkston-Glass-framed-shower.jpg",
   },
   {
